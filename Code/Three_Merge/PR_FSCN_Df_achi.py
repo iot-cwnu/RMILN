@@ -104,29 +104,6 @@ def split_train_test(data, label, test_ratio):
     test_label = label[:test_set_size]
     train_data = data[test_set_size:]
     train_label = label[test_set_size:]
-    # 设置随机数种子，保证每次生成的结果都是一样的
-    # random.seed(38)
-    # random.shuffle(data)
-    # random.seed(38)
-    # random.shuffle(label)
-    # newdata, newlabel = [], []
-    # for k in range(21):  # 21种活动
-    #     newdata.append([]), newlabel.append([])
-    # for i in range(len(label)):
-    #     newdata[int(label[i])].append(data[i])
-    # train_data, test_data, train_label, test_label = [], [], [], []
-    # for i in range(len(newdata)):  # 遍历每种活动
-    #     for j in range(len(newdata[i])):
-    #         if j < int(len(newdata[i]) * test_ratio):
-    #             test_data.append(newdata[i][j])
-    #             test_label.append(i)
-    #         else:
-    #             train_data.append(newdata[i][j])
-    #             train_label.append(i)
-    # random.seed(38)
-    # random.shuffle(train_data)
-    # random.seed(38)
-    # random.shuffle(train_label)
     return train_data, train_label, test_data, test_label
 
 traindata, trainlabel, testdata, testlabel = split_train_test(data, label, 0.2)
